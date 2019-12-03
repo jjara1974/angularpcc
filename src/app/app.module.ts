@@ -6,10 +6,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { BarraComponent } from './barra/barra.component';
 import { InformesComponent } from './informes/informes.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: 'informes', component: InformesComponent },
-  { path: 'login',component: LoginComponent },
+  { path: 'login', component: LoginComponent,  pathMatch: 'full'},
   /*{
     path: 'heroes',
     component: HeroListComponent,
@@ -24,7 +26,7 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  imports:[ BrowserModule, FormsModule ,
+  imports:[ BrowserModule, FormsModule ,HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } 

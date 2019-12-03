@@ -1,3 +1,20 @@
 
 
-<H1>PÁGINA LOGIN </H1>
+<div class="container">
+  <h1>Iniciar sesión</h1>
+  
+  <form class="form">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button type="submit" id="login-button">Login</button>
+  </form>
+</div>
+
+ <table border="1" >
+      <tr>
+        <td>usuario</td>
+      </tr>
+      <tr *ngFor="let user of usuarios">
+        <td>{{user.nombre}}</td>
+      </tr>
+    </table>

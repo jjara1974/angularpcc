@@ -8,19 +8,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuarios=null;
+  
   user={
     nombre:null,
-      }
+      };
+  usuarios: user[] = null;
 
   constructor(private loginservicio: LoginService) { }
 
   ngOnInit() {
     this.recuperarTodos();
+    console.log(this.usuarios[0].nombre);
   }
 
   recuperarTodos() {
     this. loginservicio.recuperarTodos().subscribe(result => this.usuarios = result);
+    
   }
 
 }
